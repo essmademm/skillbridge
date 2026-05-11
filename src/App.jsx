@@ -6,13 +6,11 @@ import Auth from "./screens/Auth";
 import RoleSelect from "./screens/RoleSelect";
 import StudentFlow from "./screens/StudentFlow";
 import TutorSetup from "./screens/TutorSetup";
-//import TutorHome from "./screens/TutorHome";
-import TutorHome from "./screens/Tutorhome.jsx";
+import TutorHome from "./screens/TutorHome";
 import Chat from "./screens/Chat";
 import Lesson from "./screens/Lesson";
 import Review from "./screens/Review";
 import Exchange from "./screens/Exchange";
-
 import { translations } from "./i18n/translations";
 import { tutors as baseTutors, exchangeUsers as seedExchangeUsers } from "./data/tutors";
 import { universities } from "./data/universities";
