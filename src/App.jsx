@@ -58,6 +58,7 @@ export default function App() {
   const [exchangeResults, setExchangeResults] = useState([]);
   const [exchangeSavedMessage, setExchangeSavedMessage] = useState("");
 
+ 
  const [tutorForm, setTutorForm] = useState({
   about: "",
   subjects: "",
@@ -65,6 +66,8 @@ export default function App() {
   faculty: "",
   gpa: "",
   portfolioText: "",
+  verificationDoc: "",
+  universityEmail: "",
   lecturerExperience: "",
   lessonPrice: "",
   dayPrice: "",
@@ -115,23 +118,24 @@ useEffect(() => {
 
     if (account.tutorProfile) {
       const tp = account.tutorProfile;
-      setTutorForm({
-        about: tp.bio || "",
-        subjects: tp.subject || "",
-        courseYear: tp.courseYear || "",
-faculty: tp.faculty || "",
-gpa: tp.gpa || "",
-portfolioText: Array.isArray(tp.portfolio) ? tp.portfolio.join(", ") : "",
-        lecturerExperience: (tp.lecturerNames || []).join(", "),
-        lessonPrice: String(tp.priceLesson || ""),
-        dayPrice: String(tp.priceDay || ""),
-        weekPrice: String(tp.priceWeek || ""),
-        monthPrice: String(tp.priceMonth || ""),
-        plan: tp.pro ? "pro" : "standard",
-        multipleProfiles: tp.multipleProfiles ?? false,
-        instantRequests: tp.instantRequests ?? false
-        
-      });
+     setTutorForm({
+  about: tp.bio || "",
+  subjects: tp.subject || "",
+  courseYear: tp.courseYear || "",
+  faculty: tp.faculty || "",
+  gpa: tp.gpa || "",
+  portfolioText: Array.isArray(tp.portfolio) ? tp.portfolio.join(", ") : "",
+  verificationDoc: tp.verificationDoc || "",
+  universityEmail: tp.universityEmail || "",
+  lecturerExperience: (tp.lecturerNames || []).join(", "),
+  lessonPrice: String(tp.priceLesson || ""),
+  dayPrice: String(tp.priceDay || ""),
+  weekPrice: String(tp.priceWeek || ""),
+  monthPrice: String(tp.priceMonth || ""),
+  plan: tp.pro ? "pro" : "standard",
+  multipleProfiles: tp.multipleProfiles ?? false,
+  instantRequests: tp.instantRequests ?? false
+});
     }
   };
 
@@ -326,7 +330,13 @@ const allTutors = useMemo(() => {
       courseYear: tutorForm.courseYear || "1st year",
 faculty: tutorForm.faculty || "General",
 gpa: tutorForm.gpa || "3.5",
-      bio: tutorForm.about,
+bio: tutorForm.about,
+verificationStatus:
+  tutorForm.verificationDoc || tutorForm.universityEmail
+    ? "pending"
+    : "not_verified",
+verificationDoc: tutorForm.verificationDoc,
+universityEmail: tutorForm.universityEmail,
 
       portfolio: tutorForm.portfolioText
   ? tutorForm.portfolioText.split(",").map((item) => item.trim()).filter(Boolean)

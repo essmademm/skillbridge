@@ -103,6 +103,35 @@ export default function TutorSetup({
     setTutorForm({ ...tutorForm, portfolioText: e.target.value })
   }
 />
+<div className="verification-box">
+  <h3>{t.verificationTitle}</h3>
+  <p>{t.verificationText}</p>
+
+  <input
+    className="app-input"
+    placeholder={t.universityEmailPlaceholder}
+    value={tutorForm.universityEmail || ""}
+    onChange={(e) =>
+      setTutorForm({ ...tutorForm, universityEmail: e.target.value })
+    }
+  />
+
+  <select
+    className="app-input"
+    value={tutorForm.verificationDoc || ""}
+    onChange={(e) =>
+      setTutorForm({ ...tutorForm, verificationDoc: e.target.value })
+    }
+  >
+    <option value="">{t.chooseVerificationDoc}</option>
+    <option value="student_id">{t.studentId}</option>
+    <option value="study_certificate">{t.studyCertificate}</option>
+    <option value="transcript">{t.transcript}</option>
+    <option value="university_portal">{t.universityPortal}</option>
+  </select>
+
+  <p className="verification-note">{t.verificationNote}</p>
+</div>
           <input
             className="app-input"
             placeholder={t.lecturerExperience}

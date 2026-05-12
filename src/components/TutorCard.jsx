@@ -9,7 +9,15 @@ export default function TutorCard({ tutor, t, onSelect, onChat }) {
           <div className="card-title-row">
             <h3>{tutor.name}</h3>
             {tutor.pro && <span className="badge pro-badge">PRO</span>}
-            {tutor.online && <span className="badge online-badge">{t.online}</span>}
+{tutor.online && <span className="badge online-badge">{t.online}</span>}
+
+{tutor.verificationStatus === "verified" && (
+  <span className="badge verified-badge">{t.verifiedTutor}</span>
+)}
+
+{tutor.verificationStatus === "pending" && (
+  <span className="badge pending-badge">{t.pendingVerification}</span>
+)}
           </div>
 
           <p className="muted">
