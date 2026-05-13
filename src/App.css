@@ -843,3 +843,263 @@ select.app-input:focus {
   background: #fef3c7;
   color: #92400e;
 }
+/* MOBILE RESPONSIVE FIX */
+@media (max-width: 640px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: linear-gradient(135deg, #f8fbff, #eef4ff, #fff7ef);
+  }
+
+  .app-shell {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  .topbar {
+    width: 100%;
+    padding: 16px 14px;
+    gap: 14px;
+    border-radius: 0 0 22px 22px;
+  }
+
+  .brand-wrap {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .brand-wrap h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .brand-wrap p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .notif-pill {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .lang-switcher {
+    gap: 6px;
+  }
+
+  .lang-btn {
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .menu-dots-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .menu-dropdown {
+    right: 0;
+    width: 210px;
+  }
+
+  .screen-wrap,
+  .page-grid,
+  .role-grid,
+  .student-grid,
+  .exchange-grid,
+  .tutor-home-grid,
+  .tutor-setup-grid,
+  .two-col,
+  .three-col,
+  .stats-grid,
+  .featured-pro-list,
+  .exchange-results-grid,
+  .uni-grid {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+  }
+
+  .auth-card,
+  .promo-card,
+  .panel,
+  .role-card,
+  .tutor-card,
+  .exchange-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 22px;
+  }
+
+  .auth-card,
+  .promo-card,
+  .panel,
+  .role-card {
+    padding: 20px;
+  }
+
+  .card-header h2,
+  .panel h2 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .card-header p,
+  .subtle-text,
+  .muted {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .app-input,
+  .app-textarea,
+  select.app-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 15px;
+    font-size: 15px;
+    border-radius: 16px;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .danger-btn,
+  .small-btn,
+  .uni-btn {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border-radius: 16px;
+    font-size: 15px;
+  }
+
+  .toggle-row,
+  .action-row,
+  .plan-row,
+  .between-row,
+  .switch-row {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .tutor-card {
+    padding: 18px;
+    flex-direction: column;
+  }
+
+  .tutor-card-left {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tutor-card-right {
+    width: 100%;
+  }
+
+  .card-title-row,
+  .status-badges {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .avatar {
+    min-width: 52px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .big-avatar {
+    width: 68px;
+    height: 68px;
+  }
+
+  .profile-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pro-ad-box {
+    flex-direction: column;
+  }
+
+  .chat-box {
+    min-height: 220px;
+    padding: 14px;
+  }
+
+  .msg {
+    max-width: 100%;
+  }
+
+  .video-box {
+    height: 220px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .price-box,
+  .price-banner,
+  .success-box,
+  .info-card,
+  .review-box,
+  .pricing-box,
+  .stat-box,
+  .pricing-info-box,
+  .standard-box,
+  .verification-box {
+    width: 100%;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .auth-card,
+  .promo-card,
+  .panel,
+  .role-card {
+    padding: 16px;
+  }
+
+  .brand-wrap h1 {
+    font-size: 20px;
+  }
+
+  .card-header h2,
+  .panel h2 {
+    font-size: 20px;
+  }
+}
